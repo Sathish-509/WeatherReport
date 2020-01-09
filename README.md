@@ -24,8 +24,8 @@ Retrieving data, if available in mongoose otherwise calling
 the endpoint by passing lang, lat to fetch corresponding to its country
 
 ##### Sequence Diagram:
-![Alt text](Docs/sequence Diagram.png?raw=true "Title")
+![Seq Diagram](./Docs/Sequence_Diagram.PNG)
 
 
 ##### UI Sample:
-![Alt text](Docs/UI_thymeleaf.png?raw=true "Title")
+![UI Sample](./Docs/UI_thymeleaf.PNG)
