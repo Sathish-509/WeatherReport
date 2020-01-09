@@ -18,7 +18,7 @@ spring.data.mongodb.uri=mongodb://root:root@localhost:27017/forecast?authSource=
 ##### Running the application
 
 * mvn install
-* run the application using intellij or through jar
+* run the application using intellij or through jar or mvn spring-boot:run
 * on page load itself calling the backend to fetch the details,
 Retrieving data, if available in mongoose otherwise calling 
 the endpoint by passing lang, lat to fetch corresponding to its country
