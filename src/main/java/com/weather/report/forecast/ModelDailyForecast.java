@@ -3,6 +3,7 @@ package com.weather.report.forecast;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
@@ -15,6 +16,7 @@ public class ModelDailyForecast implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     public ObjectId _id;
+    @Indexed(name = "expire_after_seconds_index", expireAfterSeconds = 259200) //index to expire records after 3 days of creaton
     public String createdDate;
     public String place;
     private String latitude;

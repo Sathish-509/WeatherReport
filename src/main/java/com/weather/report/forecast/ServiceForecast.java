@@ -36,6 +36,7 @@ public class ServiceForecast {
         return responseObj;
     }
 
+    // Calling the endpoint to fetch data
     @Async
     public CompletableFuture<ModelDailyForecast> getForecaseFromDarkSky( String longLat) {
         RestTemplate restTemplate = new RestTemplate();
@@ -44,6 +45,7 @@ public class ServiceForecast {
         return CompletableFuture.completedFuture(responseObj);
     }
 
+    // Method to convert given Epoch time to Date
     public String convertEpocTimetoDate(String date) {
         long unix_seconds = Long.parseLong(date);
         Date dateString = new Date(unix_seconds*1000L);
