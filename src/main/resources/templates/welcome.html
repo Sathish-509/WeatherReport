@@ -21,16 +21,43 @@
         </h2>
     </div>
 
+
     <table>
         <tr th:each="element : ${report}">
+            <h5>Forecast Report For: </h5>
             <td th:text="${element.key}"></td>
             <table>
                 <tr th:each="list : ${element.value}">
+                    <h5>Langitude-Latitude: </h5>
                     <td th:text="${list.latitude}"></td>
                     <td th:text="${list.longitude}"></td>
-                    <td th:text="${list.daily.summary}"></td>
-                    <td th:text="${list.daily.data[0].time}"></td>
-                    <td th:text="${list.daily.data[0].temperatureHigh}"></td>
+                    <table border="1" style="width:500px;border-color: coral;">
+                        <h5>Day basis Report</h5>
+                        <thead>
+                            <tr>
+                                <th style="width:10%;"> Time </th>
+                                <th style="width:30%;"> Summary </th>
+                                <th style="width:10%;"> Sunrise time </th>
+                                <th style="width:10%;"> Temperature High </th>
+                                <th style="width:10%;"> Temperature Low </th>
+                                <th style="width:10%;"> Humidity </th>
+                                <th style="width:10%;"> Pressure </th>
+                                <th style="width:10%;"> Wind Speed </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="datalist : ${list.daily.data}">
+                                <td th:text="${datalist.time}"></td>
+                                <td th:text="${datalist.summary}"></td>
+                                <td th:text="${datalist.sunriseTime}"></td>
+                                <td th:text="${datalist.temperatureHigh}"></td>
+                                <td th:text="${datalist.temperatureLow}"></td>
+                                <td th:text="${datalist.humidity}"></td>
+                                <td th:text="${datalist.pressure}"></td>
+                                <td th:text="${datalist.windSpeed}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </tr>
             </table>
         </tr>
